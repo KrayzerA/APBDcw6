@@ -1,8 +1,5 @@
-using System.Data;
 using System.Data.SqlClient;
 using cw6.DTOs;
-using cw6.Models;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace cw6.Controllers;
@@ -27,6 +24,7 @@ public class AnimalController : ControllerBase
                orderBy.Equals("area") ||
                orderBy.Equals("category");
     }
+    
     [HttpGet]
     public IActionResult GetAnimals(string orderBy = "name")
     {
