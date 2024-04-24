@@ -1,4 +1,5 @@
 using cw6.Endpoints;
+using cw6.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
+builder.Services.RegisterValidators();
 
 var app = builder.Build();
 
@@ -20,5 +22,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.MapControllers();
 app.RegisterAnimalsEndpoints();
+app.RegisterAnimalsDapperEnpoints();
 
 app.Run();
